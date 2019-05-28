@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
-public class practiceproject7a
+public class MuniProj7a
 {
     public static String Thanos()
     {
@@ -233,58 +233,34 @@ public class practiceproject7a
                 String childrenOfThanos = childrenOfThanos();
                 JOptionPane.showMessageDialog(null, "Summary: \n Your name is " + name + Planet + Side + childrenOfThanos  + ". Thank you for playing :)");
                 
-                
             }
         } 
         else 
         {
+            Planet = ". You chose Planet 2";
             String[] options1 = {"left side", "right side"};
             int side = JOptionPane.showOptionDialog(null, "would you like to explore the right side or left side?", "Side", 0, 0, null, options1, null);
             if (side == 0) 
             {
-                int knowRockDude = JOptionPane.showConfirmDialog(null, "hey man, do you know who I am?", "Korg", 0, 0, null);
+                Side = ". You chose the left side";
+                String Korg = korg();
+                JOptionPane.showMessageDialog(null, "Summary: \n Your name is " + name + Planet + Side + Korg + ". Thanks for playing :)");
+            }
+            
+            else
+            {
+                Side = ". You chose the right side";
+            }
+         }
+      }
+    public static String korg()
+    {
+        String output = "";
+        int knowRockDude = JOptionPane.showConfirmDialog(null, "hey man, do you know who I am?", "Korg", 0, 0, null);
                 if (knowRockDude == 0) 
                 {
-                    String favCharacter = JOptionPane.showInputDialog("AYY, whose your favorite character from the movie Thor Rag...?");
-                    if (favCharacter.equals("Thor")) 
-                    {
-                        String favFeature = JOptionPane.showInputDialog("Oh hey, the God of Thunder is greattt, what do you like most about him");
-                        if (favFeature.equals("Hammer")) 
-                        {
-                            JOptionPane.showMessageDialog(null, "Oh yeah his hammer is great, I'm thinking about getting one of those my self", "Fav Feature", 0, null);
-                        } 
-                        else 
-                        {
-                            JOptionPane.showMessageDialog(null, "Oh yeah that's cool, his hair is nice too but look at that hammer of hisss", "Fav Feature", 0, null);
-                        }
-                    } 
-                    else if (favCharacter.equals("you") || favCharacter.equals("korg")) 
-                    {
-                        JOptionPane.showMessageDialog(null, "Oh stop you're too sweet", "", 0, null);
-                    } 
-                    else 
-                    {
-                        String[] option10 = {"I'm looking for Thanos"};
-                        JOptionPane.showOptionDialog(null, "Oh nice. Hey so what are you here for?", "", 0, 0, null, option10, null);
-                        int help = JOptionPane.showConfirmDialog(null, "Oh, I see. I know where he is, do you want to know?", "", 0, 0, null);
-                        if (help == 0) 
-                        {
-                            JOptionPane.showMessageDialog(null, "Okay, well get onto the spaceship and I'll bring you to him", "", 0, null);
-                            JOptionPane.showMessageDialog(null, "You get onto to the spaceship and seconds later arrive to Planet 51", "", 0, null);
-                            JOptionPane.showMessageDialog(null, "Alright dude, here you are. Good Luck", "", 0, null);
-                            Thanos();
-                        } 
-                        else 
-                        {
-                            JOptionPane.showMessageDialog(null, "Oh, okay well I need to go and sadly must kick you out. Have a safe trip home. Bye", "Bye", 0, null);
-                            JOptionPane.showMessageDialog(null, "Mission failed :(", "End Game", 0, null);
-                        }
-                    }
-
-                } 
-                else 
-                {
-                    JOptionPane.showMessageDialog(null, "I'm Korg, nice to meet you", "Meeting Korg", 0, null);
+                    output = ". You know who Korg is";
+                    favCharacter();
                     String[] option10 = {"I'm looking for Thanos"};
                     JOptionPane.showOptionDialog(null, "Oh nice. Hey so what are you here for?", "", 0, 0, null, option10, null);
                     int help = JOptionPane.showConfirmDialog(null, "Oh, I see. I know where he is, do you want to know?", "", 0, 0, null);
@@ -293,22 +269,100 @@ public class practiceproject7a
                         JOptionPane.showMessageDialog(null, "Okay, well get onto the spaceship and I'll bring you to him", "", 0, null);
                         JOptionPane.showMessageDialog(null, "You get onto to the spaceship and seconds later arrive to Planet 51", "", 0, null);
                         JOptionPane.showMessageDialog(null, "Alright dude, here you are. Good Luck", "", 0, null);
-                        Thanos();  
+                        Thanos();
+                        output += ". You asked for help from Korg and was dropped off at Planet 51";
+                    } 
+                    else 
+                    {
+                        JOptionPane.showMessageDialog(null, "Oh, okay well I need to go and sadly must kick you out. Have a safe trip home. Bye", "Bye", 0, null);
+                        JOptionPane.showMessageDialog(null, "Mission failed :(", "End Game", 0, null);
+                        output += ". You didn't want any help from Korg and went back home. Mission failed :(";
+                    }
+                } 
+                else 
+                {
+                    JOptionPane.showMessageDialog(null, "I'm Korg, nice to meet you", "Meeting Korg", 0, null);
+                    output = ". You don't know who Korg is but had a chance to meet him";
+                    String[] option10 = {"I'm looking for Thanos"};
+                    JOptionPane.showOptionDialog(null, "Oh nice. Hey so what are you here for?", "", 0, 0, null, option10, null);
+                    int help = JOptionPane.showConfirmDialog(null, "Oh, I see. I know where he is, do you want to know?", "", 0, 0, null);
+                    if (help == 0) 
+                    {
+                        JOptionPane.showMessageDialog(null, "Okay, well get onto the spaceship and I'll bring you to him", "", 0, null);
+                        JOptionPane.showMessageDialog(null, "You get onto to the spaceship and seconds later arrive to Planet 51", "", 0, null);
+                        JOptionPane.showMessageDialog(null, "Alright dude, here you are. Good Luck", "", 0, null);
+                        Thanos();
+                        output += ". You has help from Korg and was dropped off at Planet 51";
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null, "Oh, okay well I need to go and sadly must kick you out. Have a safe trip home. Bye", "Bye", 0, null);
+                        JOptionPane.showMessageDialog(null, "Mission failed :(", "End Game", 0, null);
+                        output += ". You didn't want any help from Korg and went back home. Mission failed :(";
                     }
                 }
-            }
-            
-            else
-            {
-                
-            }
-         }
-      }
- 
-            
-        
+        return output;
+    }
     
-           
+    public static String favCharacter()
+    {
+        String output = "";
+        String favCharacter = JOptionPane.showInputDialog("AYY, whose your favorite character from the movie Thor Rag...?");
+        if (favCharacter.equals("Thor") || favCharacter.equals("thor")) 
+        {
+            output = ". Your favorite character is Thor";
+            favFeature();
+        } 
+        else if (favCharacter.equals("you") || favCharacter.equals("korg")) 
+        {
+            output = ". Your favorite character is Korg";
+            JOptionPane.showMessageDialog(null, "Oh stop you're too sweet", "", 0, null);
+        } 
+        else 
+            output = "Your favorite character is " + favCharacter;
+        return output;
+    }
+    
+    public static String favFeature()
+    {
+        String output = "";
+        String favFeature = JOptionPane.showInputDialog("Oh hey, the God of Thunder is greattt, what do you like most about him");
+        if (favFeature.equals("Hammer")) 
+        {
+            output = ". Your favorite feauture is his hammer";
+            JOptionPane.showMessageDialog(null, "Oh yeah his hammer is great, I'm thinking about getting one of those my self", "Fav Feature", 0, null);
+        } 
+        else 
+        {
+            output = ". Your favorite feature is " + favFeature;
+            JOptionPane.showMessageDialog(null, "Oh yeah that's cool, his hair is nice too but look at that hammer of hisss", "Fav Feature", 0, null);
+        }
+        return output;
+    }  
+    
+    public static String Avengers()
+    {
+        String output = "";
+        String[] option11 = {"I'm looking for Thanos"};
+        JOptionPane.showOptionDialog(null, "What do you want?", "", 0, 0, null, option11, null);
+        String[] option12 = {"nooo"};
+        JOptionPane.showOptionDialog(null, "Are you an Avenger?", "", 0, 0, null, option12, null);
+        int avenger = JOptionPane.showConfirmDialog(null, "Would you like to become an Avenger?", "Avenger?", 0, 0, null);
+        if(avenger == 0)
+        {
+            output = ". You decided you wanted to become an Avenger";
+            String[] option13 = {"Spiderman", "Black widow", "X men"};
+            int q1 = JOptionPane.showOptionDialog(null, "Who is the first avenger", "Q1", 0, 0, null, option13, null);
+            if(q1 == 0)
+            {
+                String[] option14 = {"idk"};
+                int q2 = JOptionPane.showOptionDialog(null, "Who created the Avengers", "Q2", 0, 0, null, option14, null);
+            }
+        }
+        return output;
+    }
+        
+     
     public static void wrongQuestion()
     {
         JOptionPane.showMessageDialog(null, "Ha, Good bye", "Defeat", 0, null);
