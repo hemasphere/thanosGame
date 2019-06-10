@@ -2,202 +2,182 @@ import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 public class MuniProj7a
 {
-    public static String Thanos()
-    {
-        String output = "";
-        String[] options2 = {"I've come to retrieve the gaulet"};
-        JOptionPane.showOptionDialog(null, "...what do you want", "Thanos encounter", 0, 0, null, options2, null);
-        JOptionPane.showMessageDialog(null, "no can do, you need to defeat me first", "Thanos encounter", 0, null);
-        JOptionPane.showMessageDialog(null, "In order to beat Thanos, you must answer each question correctly and each correct answer is an attack", "Game Rules", 0, null);
-        String[] option3 = {"soul, mentality, power, reality, time, space", "soul, matter, power, mind, time, space", "soul, power, mind, time, space, reality"};
-        int questionOne = JOptionPane.showOptionDialog(null, "What are the six infinity stones?", "Question one", 0, 0, null, option3, null);
-        if (questionOne != 2) 
-        {
-            wrongQuestion();
-            output = " You got the first question wrong when facing Thanos and sadly was defeated :/";
-        } 
-        else 
-        {
-            String[] option4 = {"Satan", "Titan", "I dunno"};
-            int questionTwo = JOptionPane.showOptionDialog(null, "Where was Thanos born?", "Question Two", 0, 0, null, option4, null);
-            if (questionTwo != 1) 
-            {
-                wrongQuestion();
-                output = " You got the second question wrong when facing Thanos and sadly was defeated :/";
-            } 
-            else if (questionTwo == 1) 
-            {
-                String[] option5 = {"Odin", "Saturn", "Eternal A'lars"};
-                int questionThree = JOptionPane.showOptionDialog(null, "Thanos is the son of...", "Question Three", 0, 0, null, option5, null);
-                if (questionThree != 2) 
-                {
-                    
-                    wrongQuestion();
-                    output = " You got the last question wrong when facing Thanos and sadly was defeated :( so close";
-                } 
-                else 
-                {
-                    JOptionPane.showMessageDialog(null, "Oh no...", "Success", 0, null);
-                    JOptionPane.showMessageDialog(null, "Mission is successful :)", "End Game", 0, null);
-                    output = "You defeated Thanos and saved manking :)";
-                }
-            }
-        }
-        return output;
-    }   
-    
+    //make a name method
     public static String name()
     {
         String name = JOptionPane.showInputDialog("Enter your name");
         return name;
     }
     
-    public static String childrenOfThanos()
+    //make a wrong question method
+    public static void wrongQuestion()
     {
+        ImageIcon gauntlet = new ImageIcon(MuniProj7a.class.getResource("gauntletsnap.gif"));
+        ImageIcon missionFailed = new ImageIcon(MuniProj7a.class.getResource("missionfailed.jpg"));
+        JOptionPane.showMessageDialog(null, "Ha, Good bye", "Defeat", 0, gauntlet);
+        JOptionPane.showMessageDialog(null, "Mission failed :(", "End Game", 0, missionFailed);
+    }
+    
+    //make Thanos method
+    public static String Thanos()
+    {
+        ImageIcon thanos = new ImageIcon(MuniProj7a.class.getResource("thanoss.jpg"));
+        ImageIcon infinitystones = new ImageIcon(MuniProj7a.class.getResource("infinitystones.jpg"));
+        ImageIcon titan = new ImageIcon(MuniProj7a.class.getResource("titan.jpeg"));
+        ImageIcon thanosDefeated = new ImageIcon(MuniProj7a.class.getResource("thanosdefeated.jpg"));
+        ImageIcon missionSuccess = new ImageIcon(MuniProj7a.class.getResource("missionsuccess.jpg"));
+        ImageIcon gameRule = new ImageIcon(MuniProj7a.class.getResource("gamerules.png"));
         String output = "";
-        String[] option6 = {"I'm here for Thanos"};
-        JOptionPane.showOptionDialog(null, "What do you want?", "Encounter of Thanos's minions", 0, 0, null, option6, null);
-        JOptionPane.showMessageDialog(null, "Um, I don't think so. You must get through us first", "Getting through Thanos's gaurds", 0, null);
-        JOptionPane.showMessageDialog(null, "In order to get through the guards you must answer all of the questions correct", "Game rules", 0, null);
+        String[] option3 = {"I've come to retrieve the gauntlet"};
+        JOptionPane.showOptionDialog(null, "...what do you want", "Thanos encounter", 0, 0, thanos, option3, null);
+        JOptionPane.showMessageDialog(null, "no can do, you need to defeat me first", "Thanos encounter", 0, thanos);
+        JOptionPane.showMessageDialog(null, "In order to beat Thanos, you must answer each question correctly and each correct answer is an attack", "Game Rules", 0, gameRule);
+        String[] option4 = {"soul, mentality, power, reality, time, space", "soul, matter, power, mind, time, space", "soul, power, mind, time, space, reality"};
+        int questionOne = JOptionPane.showOptionDialog(null, "What are the six infinity stones?", "Question one", 0, 0, infinitystones, option4, null);
+        if (questionOne != 2) 
         {
-            String[] option7 = {"Ebony Maw", "Cull Obsidian", "Gamora"};
-            int questionOne = JOptionPane.showOptionDialog(null, "What is this character's name?", "Question One", 0, 0, null, option7, null);
-            if (questionOne == 0) 
+            wrongQuestion();
+            output += "You got the first question wrong when facing Thanos and sadly was defeated :/ ";
+            return output;
+        } 
+        else 
+        {
+            String[] option5 = {"Satan", "Titan", "I dunno"};
+            int questionTwo = JOptionPane.showOptionDialog(null, "Where was Thanos born?", "Question Two", 0, 0, titan, option5, null);
+            if (questionTwo != 1) 
             {
-                String[] option8 = {"Proxima Midnight", "Corvus Glavive", "Nebula"};
-                int questionTwo = JOptionPane.showOptionDialog(null, "What is this character's name?", "Question Two", 0, 0, null, option8, null);
-                if (questionTwo == 0) 
+                wrongQuestion();
+                output += "You got the second question wrong when facing Thanos and sadly was defeated :/ ";
+                return output;
+            } 
+            else if (questionTwo == 1) 
+            {
+                String[] option6 = {"Odin", "Saturn", "Eternal A'lars"};
+                int questionThree = JOptionPane.showOptionDialog(null, "Thanos is the son of...", "Question Three", 0, 0, thanos, option6, null);
+                if (questionThree != 2) 
                 {
-                    String[] option9 = {"Flight", "Pyschokinesis", "Telephany"};
-                    int questionThree = JOptionPane.showOptionDialog(null, "What is not one of his ablilities", "Question Three", 0, 0, null, option9, null);
-                    if (questionThree == 2) {
-                        Thanos();
-                    } else {
-                        for (int i = 0; i < 1; i++) {
-                            int q3 = JOptionPane.showOptionDialog(null, "Incorrect. What is NOT this character's power?", "Question Three", 0, 0, null, option9, null);
-                            if (q3 != 2) {
-                                wrongQuestion();
-                                output = ". You could not answer what is not Ebony's Maw power and sadly was defeated by the Children Of Thanos and lost :/";
-                            } else {
-                                Thanos();
-                                output = "You won against the Children of Thanos and then faced Thanos";
-                            }
-                        }
-                    }
+                    
+                    wrongQuestion();
+                    output += "You got the last question wrong when facing Thanos and sadly was defeated :( so close. ";
+                    return output;
                 } 
                 else 
                 {
-                    for (int i = 0; i < 1; i++) 
-                    {
-                        int q2 = JOptionPane.showOptionDialog(null, "Incorrect. What is this chracter's name?", "Question Two", 0, 0, null, option8, null);
-                        if (q2 != 0) 
-                        {
-                            wrongQuestion();
-                            output = "You could not tell that this chacter is Proxima Midnight? and was sadly defated by the Children Of Thanos and lost :(";
-                        } 
-                        else 
-                        {
-                            String[] option9 = {"Flight", "Pyschokinesis", "Telephany"};
-                            int questionThree = JOptionPane.showOptionDialog(null, "What is not one of his ablilities", "Question Three", 0, 0, null, option9, null);
-                            if (questionThree == 2) {
-                                Thanos();
-                                output = "You won against the Children of Thanos and then faced Thanos";
-                            } else {
-                                for (int k = 0; k < 1; k++) {
-                                    int q3 = JOptionPane.showOptionDialog(null, "Incorrect. What is NOT this character's power?", "Question Three", 0, 0, null, option9, null);
-                                    if (q3 != 2) {
-                                        wrongQuestion();
-                                        output = ". You could not answer what is not Ebony's Maw power and sadly was defeated by the Children Of Thanos and lost :/";
-                                    } else {
-                                        Thanos();
-                                        output = "You won against the Children of Thanos and then faced Thanos";
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    JOptionPane.showMessageDialog(null, "Oh no...", "Success", 0, thanosDefeated);
+                    JOptionPane.showMessageDialog(null, "Mission is successful :)", "End Game", 0, missionSuccess);
+                    output = "You defeated Thanos and saved manking :). ";
+                    return output;
                 }
-            } 
-            else 
+            }
+        }
+        return output;
+    }   
+    
+    //make childrenOfThanos method
+    public static String childrenOfThanos()
+    {
+        ImageIcon cOT = new ImageIcon(MuniProj7a.class.getResource("childrenOfThanos.jpg"));
+        ImageIcon gameRule = new ImageIcon(MuniProj7a.class.getResource("gamerules.png"));
+        String output = "";
+        String[] option7 = {"I'm here for Thanos"};
+        JOptionPane.showOptionDialog(null, "What do you want?", "Encounter of Thanos's minions", 0, 0, cOT, option7, null);
+        JOptionPane.showMessageDialog(null, "Um, I don't think so. You must get through us first", "Getting through Thanos's gaurds", 0, cOT);
+        JOptionPane.showMessageDialog(null, "In order to get through the guards you must answer all of the questions correct", "Game rules", 0, gameRule);
+        {
+           Q1();
+        }
+        return output;
+    }
+    
+    //make q1 method
+    public static String Q1()
+    {
+        ImageIcon ebonyMaw = new ImageIcon(MuniProj7a.class.getResource("em.jpg"));
+        String output = "";
+        String[] option8 = {"Ebony Maw", "Cull Obsidian", "Gamora"};
+        int questionOne = JOptionPane.showOptionDialog(null, "What is this character's name?", "Question One", 0, 0, ebonyMaw, option8, null);
+        if (questionOne == 0) 
+        {
+            Q2();
+        } 
+        else 
+        {
+            for (int i = 0; i < 1; i++) 
             {
-                for (int i = 0; i < 1; i++) 
+                int q1 = JOptionPane.showOptionDialog(null, "Incorrect, what is this character's name?", "Question One", 0, 0, ebonyMaw, option8, null);
+                if (q1 != 0) 
                 {
-                    int q1 = JOptionPane.showOptionDialog(null, "Incorrect, what is this character's name?", "Question One", 0, 0, null, option7, null);
-                    if (q1 != 0) 
-                    {
-                        wrongQuestion();
-                        output = "You could not tell this is Ebony Maw and was sadly defeated by the Children Of Thanos and lost :(";
-                    } 
-                    else 
-                    {
-                        String[] option8 = {"Proxima Midnight", "Corvus Glavive", "Nebula"};
-                        int questionTwo = JOptionPane.showOptionDialog(null, "What is this character's name?", "Question Two", 0, 0, null, option8, null);
-                        if (questionTwo == 0) 
-                        {
-                            String[] option9 = {"Flight", "Pyschokinesis", "Telephany"};
-                            int questionThree = JOptionPane.showOptionDialog(null, "What is not one of his ablilities", "Question Three", 0, 0, null, option9, null);
-                            if (questionThree == 2) 
-                            {
-                                Thanos();
-                                output = "You won against the Children of Thanos and then faced Thanos";
-                            } 
-                            else 
-                            {
-                                for (int k = 0; k < 1; k++) 
-                                {
-                                    int q3 = JOptionPane.showOptionDialog(null, "Incorrect. What is NOT this character's power?", "Question Three", 0, 0, null, option9, null);
-                                    if (q3 != 2) 
-                                    {
-                                        wrongQuestion();
-                                        output = ". You could not answer what is not Ebony's Maw power and sadly was defeated by the Children Of Thanos and lost :/";
-                                    } else 
-                                    {
-                                        Thanos();
-                                        output = "You won against the Children of Thanos and then faced Thanos";
-                                    }
-                                }
-                            }
-                        } 
-                        else 
-                        {
-                            for (int j = 0; j < 1; j++) 
-                            {
-                                int q2 = JOptionPane.showOptionDialog(null, "Incorrect. What is this chracter's name?", "Question Two", 0, 0, null, option8, null);
-                                if (q2 != 0) 
-                                {
-                                    wrongQuestion();
-                                    output = "You could not tell that this chacter is Proxima Midnight? and was sadly defated by the Children Of Thanos and lost :(";
-                                } 
-                                else 
-                                {
-                                    String[] option9 = {"Flight", "Pyschokinesis", "Telephany"};
-                                    int questionThree = JOptionPane.showOptionDialog(null, "What is not one of his ablilities", "Question Three", 0, 0, null, option9, null);
-                                    if (questionThree == 2) 
-                                    {
-                                        Thanos();
-                                        output = "You won against the Children of Thanos and then faced Thanos";
-                                    } 
-                                    else 
-                                    {
-                                        for (int l = 0; l < 1; l++) 
-                                        {
-                                            int q3 = JOptionPane.showOptionDialog(null, "Incorrect. What is NOT this character's power?", "Question Three", 0, 0, null, option9, null);
-                                            if (q3 != 2) 
-                                            {
-                                                wrongQuestion();
-                                                output = ". You could not answer what is not Ebony's Maw power and sadly was defeated by the Children Of Thanos and lost :/";
-                                            } 
-                                            else 
-                                            {
-                                                Thanos();
-                                                output = "You won against the Children of Thanos and then faced Thanos";
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    wrongQuestion();
+                    output += "You could not tell this is Ebony Maw and was sadly defeated by the Children Of Thanos and lost :( ";
+                } 
+                else 
+                {
+                    Q2();
+                }
+            }
+        }
+        return output;
+    }
+    
+    //make q2 method
+    public static String Q2()
+    {
+        ImageIcon proximaMidnight = new ImageIcon(MuniProj7a.class.getResource("pm.jpg"));
+        String output = "";
+        String[] option9 = {"Proxima Midnight", "Corvus Glavive", "Nebula"};
+        int questionTwo = JOptionPane.showOptionDialog(null, "What is this character's name?", "Question Two", 0, 0, proximaMidnight, option9, null);
+        if (questionTwo == 0) 
+        {
+            Q3();
+        } 
+        else 
+        {
+            for (int j = 0; j < 1; j++) 
+            {
+                int q2 = JOptionPane.showOptionDialog(null, "Incorrect. What is this chracter's name?", "Question Two", 0, 0, proximaMidnight, option9, null);
+                if (q2 != 0) 
+                {
+                    wrongQuestion();
+                    output += "You could not tell that this chacter is Proxima Midnight? and was sadly defated by the Children Of Thanos and lost :( ";
+                } 
+                else 
+                {
+                    Q3();
+                }
+            }
+        }
+        return output;
+    }
+    
+    //make q3 method
+    public static String Q3()
+    {
+        ImageIcon ebonyMaw = new ImageIcon(MuniProj7a.class.getResource("em.jpg"));
+        String output = "";
+        String[] option10 = {"Flight", "Pyschokinesis", "Telephany"};
+        int questionThree = JOptionPane.showOptionDialog(null, "What is not one of his ablilities", "Question Three", 0, 0, ebonyMaw, option10, null);
+        if (questionThree == 2) 
+        {
+            String thanos = Thanos();
+            output += "You won against the Children of Thanos and then faced Thanos ";
+            output += thanos;
+        } 
+        else 
+        {
+            for (int k = 0; k < 1; k++) 
+            {
+                int q3 = JOptionPane.showOptionDialog(null, "Incorrect. What is NOT this character's power?", "Question Three", 0, 0, ebonyMaw, option10, null);
+                if (q3 != 2) 
+                {
+                    wrongQuestion();
+                    output += "You could not answer what is not Ebony's Maw power and sadly was defeated by the Children Of Thanos and lost :/ ";
+                    return output;
+                } 
+                else 
+                {
+                    String thanos = Thanos();
+                    output += "You won against the Children of Thanos and then faced Thanos ";
+                    output += thanos;
                 }
             }
         }
@@ -207,166 +187,198 @@ public class MuniProj7a
 
     public static void main(String[]args)
     {
+        ImageIcon smile = new ImageIcon(MuniProj7a.class.getResource("smile.jpg"));
+        ImageIcon planets = new ImageIcon(MuniProj7a.class.getResource("planet.jpg"));
+        ImageIcon leftorright = new ImageIcon(MuniProj7a.class.getResource("leftorright.jpg"));
+        ImageIcon mission = new ImageIcon(MuniProj7a.class.getResource("mission.gif"));
         String name;
-        String Thanos;
-        String Planet;
-        String Side;
+        String thanos;
+        String planet;
+        String side;
         name = name();
-        JOptionPane.showMessageDialog(null, "Hello " + name + ". Welcome to your mission", "Greetings", 0, null);
-        JOptionPane.showMessageDialog(null, "Your mission is to retreive Thanos's gaulet", "Mission", 0, null);
-        String[] options = {"Planet 51", "Planet 2"};
-        int planet = JOptionPane.showOptionDialog(null, name + ", which planet would you like to go to?", "Planet", 0, 0, null, options, null);
-        if (planet == 0) 
+        JOptionPane.showMessageDialog(null, "Hello " + name + ". Welcome to your mission", "Greetings", 0, smile);
+        JOptionPane.showMessageDialog(null, "We're in the EndGame now, your mission is to retreive Thanos's gauntlet", "Mission", 0, mission);
+        String[] option1 = {"Planet 51", "Planet 2"};
+        int Planet = JOptionPane.showOptionDialog(null, name + ", which planet would you like to go to?", "Planet", 0, 0, planets, option1, null);
+        if (Planet == 0) 
         {
-            Planet = ". You chose Planet 51.";
-            String[] options1 = {"left side", "right side"};
-            int side = JOptionPane.showOptionDialog(null, "would you like to explore the right side or left side?", "Side", 0, 0, null, options1, null);
-            if (side == 1) 
+            planet = ". You chose Planet 51. ";
+            String[] option2 = {"left side", "right side"};
+            int Side = JOptionPane.showOptionDialog(null, "would you like to explore the right side or left side?", "Side", 0, 0, leftorright, option2, null);
+            if (Side == 1) 
             {
-               Side = " You chose the right side.";
-               Thanos = Thanos();
-               JOptionPane.showMessageDialog(null, "Summary: \n Your name is " + name + Planet + Side + Thanos + ". Thank you for playing");
+               side = "You chose the right side. ";
+               thanos = Thanos();
+               JOptionPane.showMessageDialog(null, "Summary: \n Your name is " + name + planet + side + thanos + ". Thank you for playing", "Summary", 0, smile);
             } 
             else 
             {
-                Side = " You chose the left side";
+                side = "You chose the left side. ";
                 String childrenOfThanos = childrenOfThanos();
-                JOptionPane.showMessageDialog(null, "Summary: \n Your name is " + name + Planet + Side + childrenOfThanos  + ". Thank you for playing :)");
-                
+                JOptionPane.showMessageDialog(null, "Summary: \n Your name is " + name + planet + side + childrenOfThanos  + "Thank you for playing :)", "Summary", 0, smile);   
             }
         } 
         else 
         {
-            Planet = ". You chose Planet 2";
+            planet = ". You chose Planet 2. ";
             String[] options1 = {"left side", "right side"};
-            int side = JOptionPane.showOptionDialog(null, "would you like to explore the right side or left side?", "Side", 0, 0, null, options1, null);
-            if (side == 0) 
+            int Side = JOptionPane.showOptionDialog(null, "would you like to explore the right side or left side?", "Side", 0, 0, leftorright, options1, null);
+            if (Side == 0) 
             {
-                Side = ". You chose the left side";
-                String Korg = korg();
-                JOptionPane.showMessageDialog(null, "Summary: \n Your name is " + name + Planet + Side + Korg + ". Thanks for playing :)");
+                side = "You chose the left side. ";
+                String korg = korg();
+                JOptionPane.showMessageDialog(null, "Summary: \n Your name is " + name + planet + side + korg + "Thank you for playing :)");
             }
             
             else
             {
-                Side = ". You chose the right side";
+                side = "You chose the right side. ";
+                String avengers = Avengers();
+                JOptionPane.showMessageDialog(null, "Summary: \n Your name is " + name + planet + side + avengers + "Thank you for playing :)");
+                
             }
          }
       }
+    
+    //make korg method
     public static String korg()
     {
+        ImageIcon korg = new ImageIcon(MuniProj7a.class.getResource("korg.jpg"));
+        ImageIcon hammer = new ImageIcon(MuniProj7a.class.getResource("hammer.jpg"));
+        ImageIcon spaceship = new ImageIcon(MuniProj7a.class.getResource("spaceship.jpg"));
+        ImageIcon missionFailed = new ImageIcon(MuniProj7a.class.getResource("missionfailed.jpg"));
         String output = "";
-        int knowRockDude = JOptionPane.showConfirmDialog(null, "hey man, do you know who I am?", "Korg", 0, 0, null);
+        int knowRockDude = JOptionPane.showConfirmDialog(null, "hey man, do you know who I am?", "Korg", 0, 0, korg);
                 if (knowRockDude == 0) 
                 {
-                    output = ". You know who Korg is";
-                    favCharacter();
-                    String[] option10 = {"I'm looking for Thanos"};
-                    JOptionPane.showOptionDialog(null, "Oh nice. Hey so what are you here for?", "", 0, 0, null, option10, null);
-                    int help = JOptionPane.showConfirmDialog(null, "Oh, I see. I know where he is, do you want to know?", "", 0, 0, null);
+                    output += "You know who Korg is. ";
+                    String favCharacter = JOptionPane.showInputDialog("AYY, whose your favorite character from the movie Thor: Ragnarok?");
+                    if (favCharacter.equals("Thor") || favCharacter.equals("thor")) 
+                    {
+                        output += "Your favorite character is Thor. ";
+                        String favFeature = JOptionPane.showInputDialog("Oh hey, the God of Thunder is greattt, which feature do you like most about him");
+                        if (favFeature.equals("Hammer") || favFeature.equals("hammer")) 
+                        {
+                            output += "Your favorite feauture is his hammer. ";
+                            JOptionPane.showMessageDialog(null, "Oh yeah his hammer is great, I'm thinking about getting one of those my self", "Fav Feature", 0, hammer);
+                        } 
+                        else 
+                        {
+                            output += "Your favorite feature is " + favFeature + ". ";
+                            JOptionPane.showMessageDialog(null, "Oh yeah that's cool, his hair is nice too but look at that hammer of hisss", "Fav Feature", 0, hammer);
+                        }
+                    } 
+                    else if (favCharacter.equals("you") || favCharacter.equals("korg")) 
+                    {
+                        output += "Your favorite character is Korg. ";
+                        JOptionPane.showMessageDialog(null, "Oh stop you're too sweet", "", 0, korg);
+                    } 
+                    else
+                    {
+                        output += "Your favorite character is " + favCharacter;
+                        JOptionPane.showMessageDialog(null, "Oh, that's cool I guess", "", 0, korg);
+                    }
+                    String[] option11 = {"I'm looking for Thanos"};
+                    JOptionPane.showOptionDialog(null, "Hey so what are you here for?", "", 0, 0, korg, option11, null);
+                    int help = JOptionPane.showConfirmDialog(null, "Oh, I see. I know where he is, do you want to know?", "", 0, 0, korg);
                     if (help == 0) 
                     {
-                        JOptionPane.showMessageDialog(null, "Okay, well get onto the spaceship and I'll bring you to him", "", 0, null);
-                        JOptionPane.showMessageDialog(null, "You get onto to the spaceship and seconds later arrive to Planet 51", "", 0, null);
-                        JOptionPane.showMessageDialog(null, "Alright dude, here you are. Good Luck", "", 0, null);
-                        Thanos();
-                        output += ". You asked for help from Korg and was dropped off at Planet 51";
+                        JOptionPane.showMessageDialog(null, "Okay, well get onto the spaceship and I'll take you", "", 0, korg);
+                        JOptionPane.showMessageDialog(null, "You get onto to the spaceship and seconds later arrive to Planet 51", "", 0, spaceship);
+                        JOptionPane.showMessageDialog(null, "Alright dude, here you are. Good Luck", "", 0, korg);
+                        String thanos = Thanos();
+                        output += "You asked for help from Korg and was dropped off at Planet 51. ";
+                        output += thanos;
                     } 
                     else 
                     {
-                        JOptionPane.showMessageDialog(null, "Oh, okay well I need to go and sadly must kick you out. Have a safe trip home. Bye", "Bye", 0, null);
-                        JOptionPane.showMessageDialog(null, "Mission failed :(", "End Game", 0, null);
-                        output += ". You didn't want any help from Korg and went back home. Mission failed :(";
+                        JOptionPane.showMessageDialog(null, "Oh, okay well I need to go and sadly must kick you out. Have a safe trip home. Bye", "Bye", 0, korg);
+                        JOptionPane.showMessageDialog(null, "Mission failed :(", "End Game", 0, missionFailed);
+                        output += "You didn't want any help from Korg and went back home. Mission failed :( ";
                     }
                 } 
                 else 
                 {
-                    JOptionPane.showMessageDialog(null, "I'm Korg, nice to meet you", "Meeting Korg", 0, null);
-                    output = ". You don't know who Korg is but had a chance to meet him";
-                    String[] option10 = {"I'm looking for Thanos"};
-                    JOptionPane.showOptionDialog(null, "Oh nice. Hey so what are you here for?", "", 0, 0, null, option10, null);
-                    int help = JOptionPane.showConfirmDialog(null, "Oh, I see. I know where he is, do you want to know?", "", 0, 0, null);
+                    JOptionPane.showMessageDialog(null, "I'm Korg, nice to meet you", "Meeting Korg", 0, korg);
+                    output = "You don't know who Korg is but had a chance to meet him. ";
+                    String[] option11 = {"I'm looking for Thanos"};
+                    JOptionPane.showOptionDialog(null, "Oh nice. Hey so what are you here for?", "", 0, 0, null, option11, korg);
+                    int help = JOptionPane.showConfirmDialog(null, "Oh, I see. I know where he is, do you want to know?", "", 0, 0, korg);
                     if (help == 0) 
                     {
-                        JOptionPane.showMessageDialog(null, "Okay, well get onto the spaceship and I'll bring you to him", "", 0, null);
-                        JOptionPane.showMessageDialog(null, "You get onto to the spaceship and seconds later arrive to Planet 51", "", 0, null);
-                        JOptionPane.showMessageDialog(null, "Alright dude, here you are. Good Luck", "", 0, null);
-                        Thanos();
-                        output += ". You has help from Korg and was dropped off at Planet 51";
+                        JOptionPane.showMessageDialog(null, "Okay, well get onto the spaceship and I'll bring you to him", "", 0, korg);
+                        JOptionPane.showMessageDialog(null, "You get onto to the spaceship and seconds later arrive to Planet 51", "", 0, spaceship);
+                        JOptionPane.showMessageDialog(null, "Alright dude, here you are. Good Luck", "", 0, korg);
+                        String thanos = Thanos();
+                        output += "You has help from Korg and was dropped off at Planet 51. ";
+                        output += thanos;
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(null, "Oh, okay well I need to go and sadly must kick you out. Have a safe trip home. Bye", "Bye", 0, null);
-                        JOptionPane.showMessageDialog(null, "Mission failed :(", "End Game", 0, null);
-                        output += ". You didn't want any help from Korg and went back home. Mission failed :(";
+                        JOptionPane.showMessageDialog(null, "Oh, okay well I need to go and sadly must kick you out. Have a safe trip home. Bye", "Bye", 0, korg);
+                        JOptionPane.showMessageDialog(null, "Mission failed :(", "End Game", 0, missionFailed);
+                        output += "You didn't want any help from Korg and went back home. Mission failed :( ";
                     }
                 }
         return output;
     }
     
-    public static String favCharacter()
-    {
-        String output = "";
-        String favCharacter = JOptionPane.showInputDialog("AYY, whose your favorite character from the movie Thor Rag...?");
-        if (favCharacter.equals("Thor") || favCharacter.equals("thor")) 
-        {
-            output = ". Your favorite character is Thor";
-            favFeature();
-        } 
-        else if (favCharacter.equals("you") || favCharacter.equals("korg")) 
-        {
-            output = ". Your favorite character is Korg";
-            JOptionPane.showMessageDialog(null, "Oh stop you're too sweet", "", 0, null);
-        } 
-        else 
-            output = "Your favorite character is " + favCharacter;
-        return output;
-    }
-    
-    public static String favFeature()
-    {
-        String output = "";
-        String favFeature = JOptionPane.showInputDialog("Oh hey, the God of Thunder is greattt, what do you like most about him");
-        if (favFeature.equals("Hammer")) 
-        {
-            output = ". Your favorite feauture is his hammer";
-            JOptionPane.showMessageDialog(null, "Oh yeah his hammer is great, I'm thinking about getting one of those my self", "Fav Feature", 0, null);
-        } 
-        else 
-        {
-            output = ". Your favorite feature is " + favFeature;
-            JOptionPane.showMessageDialog(null, "Oh yeah that's cool, his hair is nice too but look at that hammer of hisss", "Fav Feature", 0, null);
-        }
-        return output;
-    }  
-    
+    //make Avengers method
     public static String Avengers()
     {
+        ImageIcon avengers = new ImageIcon(MuniProj7a.class.getResource("ave.jpg"));
+        ImageIcon ironman = new ImageIcon(MuniProj7a.class.getResource("im.png"));
         String output = "";
         String[] option11 = {"I'm looking for Thanos"};
-        JOptionPane.showOptionDialog(null, "What do you want?", "", 0, 0, null, option11, null);
+        JOptionPane.showOptionDialog(null, "What do you want?", "", 0, 0, avengers, option11, null);
         String[] option12 = {"nooo"};
-        JOptionPane.showOptionDialog(null, "Are you an Avenger?", "", 0, 0, null, option12, null);
-        int avenger = JOptionPane.showConfirmDialog(null, "Would you like to become an Avenger?", "Avenger?", 0, 0, null);
+        JOptionPane.showOptionDialog(null, "Are you an Avenger?", "", 0, 0, ironman, option12, null);
+        int avenger = JOptionPane.showConfirmDialog(null, "Would you like to become an Avenger?", "Avenger?", 0, 0, ironman);
         if(avenger == 0)
         {
-            output = ". You decided you wanted to become an Avenger";
-            String[] option13 = {"Spiderman", "Black widow", "X men"};
-            int q1 = JOptionPane.showOptionDialog(null, "Who is the first avenger", "Q1", 0, 0, null, option13, null);
-            if(q1 == 0)
+            output += "You decided you wanted to become an Avenger. ";
+            String[] option13 = {"Spiderman", "Iron Man", "Captain America"};
+            int q1 = JOptionPane.showOptionDialog(null, "Which Avenger was created first?", "Q1", 0, 0, avengers, option13, null);
+            if(q1 == 2)
             {
-                String[] option14 = {"idk"};
-                int q2 = JOptionPane.showOptionDialog(null, "Who created the Avengers", "Q2", 0, 0, null, option14, null);
+                String[] option14 = {"Stan Lee", "Nick Furry", "Captain Mavrel"};
+                int q2 = JOptionPane.showOptionDialog(null, "Who created the Avengers (in the movie)", "Q2", 0, 0, avengers, option14, null);
+                if(q2 == 1)
+                {
+                    String[] option15 = {"Iron Man, Captain America, Thor, Hulk, Black Widow, Hawkeye", "Falcon, Scarlet Witch, Vision, Docto Strange, Hulk, Captain America", "Captain America, Vision, Doctor Strange, Thor, Hulk, Hawkeye"};
+                    int q3 = JOptionPane.showOptionDialog(null, "Who are the original six Avengers?", "Q3", 0, 0, avengers, option15, null);
+                    if(q3 == 0)
+                    {
+                        output += "You've become an offical Avenger and then head to face Thanos. ";
+                        JOptionPane.showMessageDialog(null, "Congrats kid, you're an Avenger now. Time to face Thanos", "", 0, ironman);
+                        String thanos = Thanos();
+                        output += thanos;
+                    }
+                    else
+                    {
+                         JOptionPane.showMessageDialog(null, "Go home kid, Friday take him home", "", 0, ironman);
+                        output += "You couldn't answer the first question and was sent home :( the original six Avengers are: \n Iron Man, Captain America, Thor, Hulk, Black Widow and Hawkeye. ";
+                    }
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Go home kid, Friday take him home", "", 0, ironman);
+                    output += "You couldn't answer the first question and was sent home :( Nick Furry created the Avengers in the movie but Stan lee actually created them. ";
+                }
             }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Go home kid, Friday take him home", "", 0, ironman);
+                output += "You couldn't answer the first question and was sent home :( Captain America since he was created in 1941. ";
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Oh, you want to face Thanos alone? Okay, go ahead", "", 0, ironman);
+            String thanos = Thanos();
+            output += "You didn't want to be an avenger and faced Thanos alone. ";
+            output += thanos;
         }
         return output;
     }
-        
-     
-    public static void wrongQuestion()
-    {
-        JOptionPane.showMessageDialog(null, "Ha, Good bye", "Defeat", 0, null);
-        JOptionPane.showMessageDialog(null, "Mission failed :(", "End Game", 0, null);
-    }
-    
 }
